@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
 use App\Models\Slide;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\SlideFormRequest;
@@ -36,7 +36,7 @@ class SlideController extends Controller
         $slide=new Slide;
         if ($request->hasFile('slider')) {
             $file=$request->file('slider');
-            $file->move(public_path().'/images/slider/',$file->getClientOriginalName());
+            $file->move(public_path().'/img/slide/',$file->getClientOriginalName());
             $slide->slider=$file->getClientOriginalName();
         }
         $slide->titulo=$request->get('titulo');
@@ -60,7 +60,7 @@ class SlideController extends Controller
         $slide=Slide::findOrFail($cod);
         if ($request->hasFile('slider')) {
             $file=$request->file('slider');
-            $file->move(public_path().'/images/slider/',$file->getClientOriginalName());
+            $file->move(public_path().'/img/slide/',$file->getClientOriginalName());
             $slide->imagen=$file->getClientOriginalName();
         }
         $slide->titulo=$request->get('titulo');

@@ -57,9 +57,9 @@
         <div class="sidebar-content">
             <div class="nav-container">
                 <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
-                    <li class="has-sub nav-item"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">Dashboard</span><span class="tag badge badge-pill badge-danger float-right mr-1 mt-1">2</span></a>
+                    <li class="has-sub nav-item active"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">Dashboard</span><span class="tag badge badge-pill badge-danger float-right mr-1 mt-1"></span></a>
                         <ul class="menu-content">
-                            <li class="active"><a href="dashboard1.html" class="menu-item">Dashboard1</a>
+                            <li><a href="dashboard1.html" class="menu-item">Dashboard1</a>
                             </li>
                             <li><a href="dashboard2.html" class="menu-item">Dashboard2</a>
                             </li>
@@ -347,7 +347,7 @@
 
         <!-- BEGIN : Footer-->
         <footer class="footer footer-static footer-light">
-            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright  &copy; 2019 <a href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank" class="text-bold-800 primary darken-2">PIXINVENT </a>, All rights reserved. </span></p>
+            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright  &copy; 2023 <a href="https://cjservice.com" id="pixinventLink" target="_blank" class="text-bold-800 primary darken-2">CJ SERVICE </a>, Todos los derechos reservados. </span></p>
         </footer>
         <!-- End : Footer-->
 

@@ -17,4 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin/index', 'App\Http\Controllers\IndexController@index');
 Route::get('/admin/slide', 'App\Http\Controllers\SlideController@index');
