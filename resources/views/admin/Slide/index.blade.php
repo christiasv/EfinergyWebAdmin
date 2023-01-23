@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('contenido')
 
-    <h1>Administrar Sliders</h1>
+    <h1>Administrar Slides</h1>
 
     @include('admin.slide.search')
 

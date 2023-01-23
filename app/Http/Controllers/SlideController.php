@@ -45,7 +45,7 @@ class SlideController extends Controller
         $slide->redireccion=$request->get('redireccion');
         $slide->estado='1';
         $slide->save();
-        return Redirect::to('admin/slide');
+        return Redirect::to('/admin/slide');
     }
 
     public function show($cod){
@@ -68,11 +68,11 @@ class SlideController extends Controller
         $slide->descripcion=$request->get('descripcion');
         $slide->redireccion=$request->get('redireccion');
         $slide->update();
-        return Redirect::to('admin/slide');
+        return Redirect::to('/admin/slide');
     }
 
     public function destroy($cod){
         Slide::destroy($cod);
-        return Redirect::to('admin/slide');
+        return Redirect::to('/admin/slide');
     }
 }

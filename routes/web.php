@@ -17,5 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/index', 'App\Http\Controllers\IndexController@index');
-Route::get('/admin/slide', 'App\Http\Controllers\SlideController@index');
+Route::resource('/admin/index', \App\Http\Controllers\IndexController::class);
+Route::resource('/admin/slide', \App\Http\Controllers\SlideController::class);
+Route::resource('/admin/noticia', \App\Http\Controllers\NoticiaController::class);
+Route::resource('/admin/proyecto', \App\Http\Controllers\ProyectoController::class);
+Route::resource('/admin/blog', \App\Http\Controllers\BlogController::class);

@@ -1,9 +1,9 @@
-<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-update-{{$slide->cod_slider}}" style="margin-top: 50px;">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-create-blog" style="margin-top: 50px;">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <!-- modal blog -->
             <div class="modal-header">
-                <h3 class="modal-title" id="mediumModalLabel">Editar Slide - {{ $slide->titulo}}</h3>
+                <h3 class="modal-title" id="mediumModalLabel">Agregar Blog</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,8 +17,7 @@
                     </div>
                 @endif
             </div>
-            <!--{!!Form::model($slide,['method'=>'PATCH','route'=>['slide.update',$slide->cod_slider]])!!}-->
-            {{Form::Open(array('action'=>array('\App\Http\Controllers\SlideController@update',$slide->cod_slider),'method'=>'GET'))}}
+            {!!Form::open(array('url'=>'admin/blog','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
@@ -26,27 +25,44 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Slide</label>
+                                    <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Imagen de portada</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="slider" name="slider" class="form-control-file" value="{{$slide->slider}}">
-                                    <small class="form-text text-muted">Tamaño: 8000x3821</small>
+                                    <input type="file" id="img_portada" name="img_portada" class="form-control-file" accept="image/*">
+                                    <small class="form-text text-muted">Tamaño: 365x246</small>
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Titulo del slide</label>
+                                    <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Imagenes del blog</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="titulo" name="titulo" placeholder="Tituto del slide" class="form-control" required value="{{$slide->titulo}}">
+                                    <input type="file" id="img_blog" name="img_blog" multiple="" class="form-control-file" accept="image/*">
+                                    <small class="form-text text-muted">Tamaño: 767x367</small>
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Subtitulo</label>
+                                    <label for="text-input" class=" form-control-label">Titulo del blog</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="subtitulo" name="subtitulo" class="form-control" required value="{{$slide->subtitulo}}">
+                                    <input type="text" id="titular" name="titular" placeholder="Tituto del blog" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="text-input" class=" form-control-label">Usuario</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input type="text" id="cod_user" name="cod_user" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="text-input" class=" form-control-label">Fecha</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input type="datetime-local" id="fecha" name="fecha" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -54,21 +70,16 @@
                                     <label for="text-input" class=" form-control-label">Contenido</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <textarea id="descripcion" rows="10" name="descripcion" placeholder="Descripción" class="form-control ckeditor" required value="{!!$slide->descripcion!!}"></textarea>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Enlace</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="url" id="link" name="link" class="form-control" value="{{$slide->redireccion}}">
+                                    <textarea id="descripcion" rows="10" name="descripcion" placeholder="Descripción" class="form-control ckeditor" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer card-footer form-group">
                             <button type="submit" class="btn btn-primary btn-sm">
-                                Guardar
+                                Agregar
+                            </button>
+                            <button type="reset" class="btn btn-danger btn-sm">
+                                Limpiar
                             </button>
                         </div>
                     </form>

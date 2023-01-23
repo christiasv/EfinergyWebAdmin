@@ -1,9 +1,9 @@
-<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-create-slide" style="margin-top: 50px;">
+<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-create-noticia" style="margin-top: 50px;">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <!-- modal slide -->
+            <!-- modal noticia -->
             <div class="modal-header">
-                <h3 class="modal-title" id="mediumModalLabel">Agregar Slide</h3>
+                <h3 class="modal-title" id="mediumModalLabel">Agregar Noticia</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,8 +17,8 @@
                     </div>
                 @endif
             </div>
-            {!!Form::open(array('url'=>'/admin/slide','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
-            <!--{{Form::Open(array('action'=>array('\App\Http\Controllers\SlideController@store'),'method'=>'POST'))}}-->
+            {!!Form::open(array('url'=>'admin/noticia','method'=>'POST','autocomplete'=>'off'))!!}
+            <!--{{Form::Open(array('action'=>array('\App\Http\Controllers\NoticiaController@store'),'method'=>'POST'))}}-->
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
@@ -26,27 +26,10 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Slide</label>
+                                    <label for="text-input" class=" form-control-label">Fecha</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="slider" name="slider" class="form-control-file">
-                                    <small class="form-text text-muted">Tamaño: 8000x3821 maximo</small>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Titulo del slide</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" id="titulo" name="titulo" placeholder="Tituto del slide" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Subtitulo</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" id="subtitulo" name="subtitulo" placeholder="Subtitulo del slide" class="form-control">
+                                    <input type="date" id="fecha" name="fecha" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -54,15 +37,15 @@
                                     <label for="text-input" class=" form-control-label">Contenido</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <textarea id="descripcion" rows="10" name="descripcion" placeholder="Descripción" class="form-control ckeditor" required></textarea>
+                                    <textarea id="descripcion" rows="5" name="descripcion" placeholder="Descripción de la noticia" class="form-control ckeditor" required></textarea>
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Enlace</label>
+                                    <label for="text-input" class=" form-control-label">Link</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="url" id="link" name="link" placeholder="Enlace de redirección" class="form-control">
+                                    <input type="text" id="link" name="link" placeholder="Dirección url" class="form-control">
                                 </div>
                             </div>
                         </div>

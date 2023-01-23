@@ -1,5 +1,5 @@
-<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-delete-{{$slide->cod_slider}}" style="margin-top: 50px;">
-    {{Form::Open(array('action'=>array('\App\Http\Controllers\SlideController@destroy',$slide->cod_slider),'method'=>'delete'))}}
+<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-delete-{{$noticia->cod_noticias}}" style="margin-top: 50px;">
+    {{Form::Open(array('action'=>array('\App\Http\Controllers\NoticiaController@destroy',$noticia->cod_noticias),'method'=>'delete'))}}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
