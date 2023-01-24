@@ -14,10 +14,15 @@
         @foreach($proyectos as $proyecto)
             <div class="col-md-3">
                 <div class="card">
-                    <tr class="card-img-top"><img src="{{asset('/images/proyecto/'.$proyecto->img_portada)}}" alt="{{$proyecto->nombre_proyecto}}"></tr>
+                    <tr class="card-img-top"><img src="{{asset('/img/proyecto/'.$proyecto->img_curso)}}" alt="{{$proyecto->nombre_proyecto}}"></tr>
                     <div class="card-body">
                         <h4 class="card-title">{{$proyecto->nombre_proyecto}}</h4>
-                        <p class="card-text">{!!$proyecto->descripcion!!}</p><br>
+                        <p class="card-text">
+                            <?php
+                                $cut = substr($proyecto->descripcion, 0, 250)
+                                ?>
+                            {!!$cut."..."!!}
+                        </p><br>
                         <a href="" data-target="#modal-update-{{$proyecto->cod_proyecto}}" data-toggle="modal"><buton class="btn btn-primary">Editar</buton></a>
                         <a href="" data-target="#modal-delete-{{$proyecto->cod_proyecto}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
                     </div>

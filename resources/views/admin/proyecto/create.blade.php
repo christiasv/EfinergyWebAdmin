@@ -1,4 +1,4 @@
-<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-create-proyecto" style="margin-top: 50px;">
+<div class="modal fade" aria-hidden="true" aria-labelledby="mediumModalLabel" role="dialog" tabindex="-1" id="modal-create-proyecto" style="margin-top: 50px; z-index: 99999;">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <!-- modal proyecto -->
@@ -28,7 +28,7 @@
                                     <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Imagen de portada</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="img_portada" name="img_portada" class="form-control-file">
+                                    <input type="file" id="img_portada" name="img_portada" class="form-control-file" accept="image/*">
                                     <small class="form-text text-muted">Tamaño: 365x246</small>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                                     <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Imagen del curso</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="img_proyecto" name="img_proyecto" class="form-control-file">
+                                    <input type="file" id="img_curso" name="img_curso" class="form-control-file" accept="image/*">
                                     <small class="form-text text-muted">Tamaño: 832x444</small>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Contenido</label>
+                                    <label for="text-input" class="form-control-label">Contenido</label>
                                 </div>
                                 <div class="col-12 col-md-9">
                                     <textarea id="descripcion" rows="5" name="descripcion" placeholder="Descripción" class="form-control ckeditor" required></textarea>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Objetivo</label>
+                                    <label for="text-input" class="form-control-label">Objetivo</label>
                                 </div>
                                 <div class="col-12 col-md-9">
                                     <textarea id="objetivo" rows="3" name="objetivo" placeholder="Descripción" class="form-control ckeditor" required></textarea>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Dirigido a</label>
+                                    <label for="text-input" class="form-control-label">Dirigido a</label>
                                 </div>
                                 <div class="col-12 col-md-9">
                                     <textarea id="dirigido_a" rows="3" name="dirigido_a" placeholder="Descripción" class="form-control ckeditor" required></textarea>
@@ -75,7 +75,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Certificación</label>
+                                    <label for="text-input" class="form-control-label">Certificación</label>
                                 </div>
                                 <div class="col-12 col-md-9">
                                     <textarea id="certificado" rows="3" name="certificado" placeholder="Descripción" class="form-control ckeditor"></textarea>
@@ -146,7 +146,7 @@
                                     <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Imagen del docente</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="fotografia" name="fotografia" class="form-control-file">
+                                    <input type="file" id="fotografia" name="fotografia" class="form-control-file" accept="image/*">
                                     <small class="form-text text-muted">Tamaño: 306x313</small>
                                 </div>
                             </div>

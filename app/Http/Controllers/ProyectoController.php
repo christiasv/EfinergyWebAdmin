@@ -40,10 +40,10 @@ class ProyectoController extends Controller
             $file->move(public_path().'/img/proyecto/',$file->getClientOriginalName());
             $proyecto->img_portada=$file->getClientOriginalName();
         }
-        if ($request->hasFile('img_proyecto')) {
-            $file1=$request->file('img_proyecto');
+        if ($request->hasFile('img_curso')) {
+            $file1=$request->file('img_curso');
             $file1->move(public_path().'/img/proyecto/',$file1->getClientOriginalName());
-            $proyecto->img_proyecto=$file1->getClientOriginalName();
+            $proyecto->img_curso=$file1->getClientOriginalName();
         }
         $proyecto->nombre_proyecto=$request->get('nombre_proyecto');
         $proyecto->descripcion=$request->get('descripcion');
@@ -83,10 +83,10 @@ class ProyectoController extends Controller
             $file->move(public_path().'/img/proyecto/',$file->getClientOriginalName());
             $proyecto->img_portada=$file->getClientOriginalName();
         }
-        if ($request->hasFile('img_proyecto')) {
-            $file1=$request->file('img_proyecto');
+        if ($request->hasFile('img_curso')) {
+            $file1=$request->file('img_curso');
             $file1->move(public_path().'/img/proyecto/',$file1->getClientOriginalName());
-            $proyecto->img_portada=$file1->getClientOriginalName();
+            $proyecto->img_curso=$file1->getClientOriginalName();
         }
         $proyecto->nombre_proyecto=$request->get('nombre_proyecto');
         $proyecto->descripcion=$request->get('descripcion');

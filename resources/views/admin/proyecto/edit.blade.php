@@ -45,7 +45,7 @@
                                         <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Imagen del curso</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="file" id="img_proyecto" name="img_proyecto" class="form-control-file" value="{{$proyecto->img_proyecto}}">
+                                        <input type="file" id="img_curso" name="img_curso" class="form-control-file" value="{{$proyecto->img_curso}}">
                                         <small class="form-text text-muted">Tamaño: 832x444</small>
                                     </div>
                                 </div>

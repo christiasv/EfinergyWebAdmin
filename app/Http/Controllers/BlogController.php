@@ -36,12 +36,12 @@ class BlogController extends Controller
         $blog=new Blog;
         if ($request->hasFile('img_portada')) {
             $file=$request->file('img_portada');
-            $file->move(public_path().'/images/blog/',$file->getClientOriginalName());
+            $file->move(public_path().'/img/blog/',$file->getClientOriginalName());
             $blog->img_portada=$file->getClientOriginalName();
         }
         if ($request->hasFile('img_blog')) {
             $file2=$request->file('img_blog');
-            $file2->move(public_path().'/images/blog/',$file2->getClientOriginalName());
+            $file2->move(public_path().'/img/blog/',$file2->getClientOriginalName());
             $blog->img_blog=$file2->getClientOriginalName();
         }
         $blog->titular=$request->get('titular');
@@ -65,12 +65,12 @@ class BlogController extends Controller
         $blog=Blog::findOrFail($cod);
         if ($request->hasFile('img_portada')) {
             $file=$request->file('img_portada');
-            $file->move(public_path().'/images/blog/',$file->getClientOriginalName());
+            $file->move(public_path().'/img/blog/',$file->getClientOriginalName());
             $blog->img_portada=$file->getClientOriginalName();
         }
         if ($request->hasFile('img_blog')) {
             $file2=$request->file('img_blog');
-            $file2->move(public_path().'/images/blog/',$file2->getClientOriginalName());
+            $file2->move(public_path().'/img/blog/',$file2->getClientOriginalName());
             $blog->img_blog=$file2->getClientOriginalName();
         }
         $blog->titular=$request->get('titular');

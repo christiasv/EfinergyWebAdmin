@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proyecto extends Model
 {
-    protected $table='index-proyecto';
+    protected $table='proyecto';
 
     protected $primaryKey='cod_proyecto';
 
@@ -15,7 +15,7 @@ class Proyecto extends Model
 
     protected $fillable =[
         'img_portada',
-        'img_proyecto',
+        'img_curso',
         'nombre_proyecto',
         'descripcion',
         'objetivo',

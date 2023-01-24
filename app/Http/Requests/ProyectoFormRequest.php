@@ -25,9 +25,9 @@ class ProyectoFormRequest extends FormRequest
     {
         return [
             'img_portada' => 'required',
-            'img_proyecto' => 'required',
+            'img_curso' => 'required',
             'nombre_proyecto' => 'required|max:100',
-            'descripcion' => 'required|max:768',
+            'descripcion' => 'required|max:2048',
             'objetivo' => 'required|max:100',
             'dirigido_a' => 'required|max:512',
             'certificado' => 'max:256',
@@ -37,7 +37,7 @@ class ProyectoFormRequest extends FormRequest
             'cupos' => 'max:3',
             'costo' => 'required|max:10',
             'promocion' => 'max:45',
-            'dscr_docente' => 'required|max:256',
+            'descr_docente' => 'required|max:768',
             'fotografia' => 'required',
             'nom_docente' => 'required|max:45',
         ];

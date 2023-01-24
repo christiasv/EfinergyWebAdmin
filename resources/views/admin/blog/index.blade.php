@@ -10,7 +10,7 @@
         @foreach($blogs as $blog)
             <div class="col-md-3">
                 <div class="card">
-                    <tr class="card-img-top"><img src="{{asset('/images/blog/'.$blog->img_portada)}}" alt="{{$blog->titular}}"></tr>
+                    <tr class="card-img-top"><img src="{{asset('/img/blog/'.$blog->img_portada)}}" alt="{{$blog->titular}}"></tr>
                     <div class="card-body">
                         <h4 class="card-title">{{$blog->titular}}</h4>
                         <div class="row card-title">
