@@ -71,7 +71,7 @@
                                 <label for="text-input" class=" form-control-label">Url</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="url" id="url" name="url" placeholder="Url del evento" class="form-control" required>
+                                <input type="text" id="url" name="url" placeholder="Url del evento" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer card-footer form-group">

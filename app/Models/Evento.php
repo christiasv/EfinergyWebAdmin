@@ -20,7 +20,7 @@ class Evento extends Model
         'hora_inicio',
         'hora_fin',
         'direccion',
-        'url',
+        'link',
         'estado'
     ];
 

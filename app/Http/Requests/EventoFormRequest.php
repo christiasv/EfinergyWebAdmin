@@ -29,8 +29,8 @@ class EventoFormRequest extends FormRequest
             'fecha' => 'required',
             'hora_inicio' => 'required',
             'hora_fin' => 'required',
-            'dirección' => 'required',
-            'url' => 'required',
+            'direccion' => 'required',
+            'url' => 'max:512',
         ];
     }
 }

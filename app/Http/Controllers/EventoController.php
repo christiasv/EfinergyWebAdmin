@@ -44,6 +44,7 @@ class EventoController extends Controller
         $evento->hora_inicio=$request->get('hora_inicio');
         $evento->hora_fin=$request->get('hora_fin');
         $evento->direccion=$request->get('direccion');
+        $evento->url=$request->get('url');
         $evento->estado='1';
         $evento->save();
         return Redirect::to('admin/evento');
@@ -69,6 +70,7 @@ class EventoController extends Controller
         $evento->hora_inicio=$request->get('hora_inicio');
         $evento->hora_fin=$request->get('hora_fin');
         $evento->direccion=$request->get('direccion');
+        $evento->url=$request->get('url');
         $evento->update();
         return Redirect::to('admin/evento');
     }
