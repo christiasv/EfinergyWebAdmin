@@ -23,3 +23,4 @@ Route::resource('/admin/noticia', \App\Http\Controllers\NoticiaController::class
 Route::resource('/admin/proyecto', \App\Http\Controllers\ProyectoController::class);
 Route::resource('/admin/blog', \App\Http\Controllers\BlogController::class);
 Route::resource('/admin/evento', \App\Http\Controllers\EventoController::class);
+Route::resource('/admin/contacto', \App\Http\Controllers\ContactoController::class);

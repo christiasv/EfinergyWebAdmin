@@ -26,13 +26,36 @@ class BlogController extends Controller
 
             return view('admin.blog.index',["blogs"=>$blogs,"searchText"=>$query]);
         }
+        /*if ($request) {
+            $query=trim($request->get('searchText'));
+            $blogs=DB::table('blog as b')
+                ->join('usuario as a', 'b.cod_user','=','a.cod_user')
+                ->select('b.img_portada','b.img_blog','b.titular','a.nom_user','b.fecha','b.descripcion')
+                ->where('titular','LIKE','%'.$query.'%')
+                ->orderBy('b.cod_blog','desc')
+                ->paginate(9);
+
+            return view('admin.blog.index',["blogs"=>$blogs,"searchText"=>$query]);
+        }*/
     }
+
+
+    /*public function username(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $username=DB::table('blog')
+            ->select('cod_user')
+            ->join('usuario', 'usuario.cod_user', '=', 'blog.cod_user')
+            ->get();
+
+        return view('query-builder.query-builder')
+            ->with('username',$username);
+    }*/
 
     public function create(){
         return view('admin.blog.create');
     }
 
-    public function store(BlogFormRequest $request){
+    public function store(BlogFormRequest $request, $username){
         $blog=new Blog;
         if ($request->hasFile('img_portada')) {
             $file=$request->file('img_portada');

@@ -9,6 +9,11 @@ class Blog extends Model
 {
     protected $table='blog';
 
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class, 'cod_user');
+    }
+
     protected $primaryKey='cod_blog';
 
     public $timestamps=false;
