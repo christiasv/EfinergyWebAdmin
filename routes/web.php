@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+/*Login*/
+Route::view('/login','login')->name('login');
+Route::view('/registro','register')->name('register');
+Route::view('/privado','secret')->name('secret');
+
+Route::post('/validar-registro',[\App\Http\Controllers\LoginController::class,'register'])->name('validar-registro');
+Route::post('/inicia-sesion',[\App\Http\Controllers\LoginController::class,'login'])->name('inicia-sesion');
+Route::get('/logout',[\App\Http\Controllers\LoginController::class,'logout'])->name('logout');
+
+/*Pagina web*/
+
+
+/*Administrador web*/
 Route::resource('/admin/index', \App\Http\Controllers\IndexController::class);
 Route::resource('/admin/slide', \App\Http\Controllers\SlideController::class);
 Route::resource('/admin/noticia', \App\Http\Controllers\NoticiaController::class);
