@@ -21,12 +21,13 @@ Route::get('/', function () {
 /*Login*/
 Route::view('/login','login')->name('login');
 Route::view('/registro','register')->name('register');
-Route::view('/privado','secret')->name('secret');
+Route::view('/privada','secret')->middleware('auth')->name('secret');
 
 Route::post('/validar-registro',[\App\Http\Controllers\LoginController::class,'register'])->name('validar-registro');
 Route::post('/inicia-sesion',[\App\Http\Controllers\LoginController::class,'login'])->name('inicia-sesion');
 Route::get('/logout',[\App\Http\Controllers\LoginController::class,'logout'])->name('logout');
 
+Route::get('/',function (){return view('login');});
 /*Pagina web*/
 
 

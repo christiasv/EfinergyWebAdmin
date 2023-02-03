@@ -19,7 +19,7 @@ class LoginController extends Controller
         $user->password = Hash::make($request->password);
 
         $user->save();
-        return redirect(route('privada'));
+        return redirect(route('register'));
     }
 
     public function login(Request $request){
@@ -27,6 +27,11 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request){
+        Auth::logout();
 
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('login'));
     }
 }

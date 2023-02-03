@@ -71,7 +71,7 @@
                     </li>
                     <li class=" nav-item"><a href="inbox.html"><i class="ft-mail"></i><span data-i18n="" class="menu-title">Inbox</span></a>
                     </li>
-                    <li class=" nav-item"><a href="../registro"><i class="ft-message-square"></i><span data-i18n="" class="menu-title">Registrar</span></a>
+                    <li class=" nav-item"><a href="../registro"><i class="ft-message-square"></i><span data-i18n="" class="menu-title">Usuarios</span></a>
                     </li>
                 </ul>
             </div>

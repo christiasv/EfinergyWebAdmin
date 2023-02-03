@@ -6,19 +6,31 @@
     <form method="POST" action="{{route('validar-registro')}}">
         @csrf
         <div class="form-group">
+            <label for="exampleInputEmail1">Nombre Completo</label>
+            <input type="text" class="form-control" id="nameInput" name="name" aria-describedby="nameHelp" placeholder="Ingrese el nombre completo del colaborador" required autocomplete="disable">
+        </div>
+        <div class="form-group">
             <label for="exampleInputEmail1">Correo</label>
-            <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp" placeholder="Enter email" required autocomplete="disable">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp" placeholder="Ingrese el correo electronico" required autocomplete="disable">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
             <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Password" required>
         </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
     </form>
+    <br>
+    <h1>Lista de usuarios</h1>
+        <table class="list-group">
+            <tr>
+                <th class="active" aria-current="true">Nombre completo</th>
+                <th class="active" aria-current="true">Correo</th>
+            </tr>
+            <tr>
+                <td class="">Nombre completo</td>
+                <td class=""></td>
+            </tr>
+        </table>
+    </div>
 
 @stop
