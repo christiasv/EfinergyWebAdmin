@@ -18,44 +18,24 @@ class BlogController extends Controller
 
     public function index(Request $request){
         if ($request) {
-            $query=trim($request->get('searchText'));
-            $blogs=DB::table('blog')->where('titular','LIKE','%'.$query.'%')
-                ->where('estado','=','1')
-                ->orderBy('cod_blog','desc')
+            $query = trim($request->get('searchText'));
+            $blogs = DB::table('blog as b')
+                ->join('usuario as u', 'b.cod_user', "u.cod_user")
+                ->select('b.cod_blog', 'b.img_portada', 'b.img_blog', 'b.titular', 'u.nom_user as nombre', 'b.fecha', 'b.descripcion')
+                ->where('b.titular', 'LIKE', '%' . $query . '%')
+                ->orderBy('cod_blog', 'desc')
                 ->paginate(9);
 
-            return view('admin.blog.index',["blogs"=>$blogs,"searchText"=>$query]);
+            return view('admin.blog.index', ["blogs" => $blogs, "searchText" => $query]);
         }
-        /*if ($request) {
-            $query=trim($request->get('searchText'));
-            $blogs=DB::table('blog as b')
-                ->join('usuario as a', 'b.cod_user','=','a.cod_user')
-                ->select('b.img_portada','b.img_blog','b.titular','a.nom_user','b.fecha','b.descripcion')
-                ->where('titular','LIKE','%'.$query.'%')
-                ->orderBy('b.cod_blog','desc')
-                ->paginate(9);
-
-            return view('admin.blog.index',["blogs"=>$blogs,"searchText"=>$query]);
-        }*/
     }
-
-
-    /*public function username(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
-    {
-        $username=DB::table('blog')
-            ->select('cod_user')
-            ->join('usuario', 'usuario.cod_user', '=', 'blog.cod_user')
-            ->get();
-
-        return view('query-builder.query-builder')
-            ->with('username',$username);
-    }*/
 
     public function create(){
-        return view('admin.blog.create');
+            $usuarios=DB::table('usuario')->where('estado','=','1')->get();
+            return view('admin.blog.create',["usuarios"=>$usuarios]);
     }
 
-    public function store(BlogFormRequest $request, $username){
+    public function store(BlogFormRequest $request){
         $blog=new Blog;
         if ($request->hasFile('img_portada')) {
             $file=$request->file('img_portada');

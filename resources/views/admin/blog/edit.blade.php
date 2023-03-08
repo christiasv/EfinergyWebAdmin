@@ -55,7 +55,7 @@
                                     <label for="text-input" class=" form-control-label">Usuario</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="cod_user" name="cod_user" class="form-control" required value="{{$blog->cod_user}}">
+                                    <input type="text" id="cod_user" name="cod_user" class="form-control" required value="{{$blog->nombre}}">
                                 </div>
                             </div>
                             <div class="row form-group">

@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-/*Login*/
+/*Login
 Route::view('/login','login')->name('login');
 Route::view('/registro','register')->name('register');
 Route::view('/privada','secret')->middleware('auth')->name('secret');
@@ -27,7 +27,8 @@ Route::post('/validar-registro',[\App\Http\Controllers\LoginController::class,'r
 Route::post('/inicia-sesion',[\App\Http\Controllers\LoginController::class,'login'])->name('inicia-sesion');
 Route::get('/logout',[\App\Http\Controllers\LoginController::class,'logout'])->name('logout');
 
-Route::get('/',function (){return view('login');});
+Route::get('/',function (){return view('login');});*/
+
 /*Pagina web*/
 
 

@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h4 class="card-title">{{$blog->titular}}</h4>
                         <div class="row card-title">
-                            <div class="col-md-6">{{$blog->cod_user}}</div>
+                            <div class="col-md-6">{{$blog->nombre}}</div>
                             <div class="col-md-6">{{$blog->fecha}}</div>
                         </div>
                         <p class="card-text">{!!$blog->descripcion!!}</p><br>
