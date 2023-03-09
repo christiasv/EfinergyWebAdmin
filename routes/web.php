@@ -13,21 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*Login*/
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-/*Login
-Route::view('/login','login')->name('login');
-Route::view('/registro','register')->name('register');
-Route::view('/privada','secret')->middleware('auth')->name('secret');
-
-Route::post('/validar-registro',[\App\Http\Controllers\LoginController::class,'register'])->name('validar-registro');
-Route::post('/inicia-sesion',[\App\Http\Controllers\LoginController::class,'login'])->name('inicia-sesion');
-Route::get('/logout',[\App\Http\Controllers\LoginController::class,'logout'])->name('logout');
-
-Route::get('/',function (){return view('login');});*/
+Route::view('auth/login','login');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout' );
 
 /*Pagina web*/
 
@@ -40,3 +32,7 @@ Route::resource('/admin/proyecto', \App\Http\Controllers\ProyectoController::cla
 Route::resource('/admin/blog', \App\Http\Controllers\BlogController::class);
 Route::resource('/admin/evento', \App\Http\Controllers\EventoController::class);
 Route::resource('/admin/contacto', \App\Http\Controllers\ContactoController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

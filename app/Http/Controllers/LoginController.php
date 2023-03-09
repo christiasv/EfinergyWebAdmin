@@ -19,7 +19,7 @@ class LoginController extends Controller
         $user->password = Hash::make($request->password);
 
         $user->save();
-        return redirect(route('register'));
+        return redirect(route(''));
     }
 
     public function login(Request $request){
