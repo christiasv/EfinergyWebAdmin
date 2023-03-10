@@ -15,10 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 /*Login*/
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
-
-Route::view('auth/login','login');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout' );
 
 /*Pagina web*/
@@ -32,6 +30,7 @@ Route::resource('/admin/proyecto', \App\Http\Controllers\ProyectoController::cla
 Route::resource('/admin/blog', \App\Http\Controllers\BlogController::class);
 Route::resource('/admin/evento', \App\Http\Controllers\EventoController::class);
 Route::resource('/admin/contacto', \App\Http\Controllers\ContactoController::class);
+Route::resource('/seguridad/usuario', \App\Http\Controllers\UsersController::class);
 
 Auth::routes();
 

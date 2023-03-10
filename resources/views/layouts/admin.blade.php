@@ -59,19 +59,19 @@
                 <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
                     <li class="has-sub nav-item active"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">Administrador</span><span class="tag badge badge-pill badge-danger float-right mr-1 mt-1"></span></a>
                         <ul class="menu-content">
-                            <li><a href="slide" class="menu-item">Slides</a></li>
-                            <li><a href="noticia" class="menu-item">Noticias</a></li>
-                            <li><a href="proyecto" class="menu-item">Proyectos</a></li>
-                            <li><a href="blog" class="menu-item">Blogs</a></li>
-                            <li><a href="evento" class="menu-item">Eventos</a></li>
-                            <li><a href="contacto" class="menu-item">Contacto</a></li>
+                            <li><a href="../admin/slide" class="menu-item">Slides</a></li>
+                            <li><a href="../admin/noticia" class="menu-item">Noticias</a></li>
+                            <li><a href="../admin/proyecto" class="menu-item">Proyectos</a></li>
+                            <li><a href="../admin/blog" class="menu-item">Blogs</a></li>
+                            <li><a href="../admin/evento" class="menu-item">Eventos</a></li>
+                            <li><a href="../admin/contacto" class="menu-item">Contacto</a></li>
                         </ul>
                     </li>
                     <li class=" nav-item"><a href="color-palette.html"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">Color Palette</span></a>
                     </li>
                     <li class=" nav-item"><a href="inbox.html"><i class="ft-mail"></i><span data-i18n="" class="menu-title">Inbox</span></a>
                     </li>
-                    <li class=" nav-item"><a href="../registro"><i class="ft-message-square"></i><span data-i18n="" class="menu-title">Usuarios</span></a>
+                    <li class=" nav-item"><a href="../seguridad/usuario"><i class="ft-message-square"></i><span data-i18n="" class="menu-title">Usuarios</span></a>
                     </li>
                 </ul>
             </div>
@@ -100,6 +100,7 @@
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
+                        <li class="nav-item mr-2 d-none d-lg-block"><p class="dropdown-item">{{ Auth::user()->name }}</p></li>
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;" class="nav-link apptogglefullscreen"><i class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                                 <p class="d-none">Expandir</p></a></li>
                         <!--<li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative dropdown-toggle"><i class="ft-flag font-medium-3 blue-grey darken-4"></i><span class="selected-language d-none"></span></a>
