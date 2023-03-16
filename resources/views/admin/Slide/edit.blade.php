@@ -18,18 +18,20 @@
                 @endif
             </div>
             <!--{!!Form::model($slide,['method'=>'PATCH','route'=>['slide.update',$slide->cod_slider]])!!}-->
-            {{Form::Open(array('action'=>array('\App\Http\Controllers\SlideController@update',$slide->cod_slider),'method'=>'GET'))}}
+            {{Form::Open(array('action'=>array('\App\Http\Controllers\SlideController@update',$slide->cod_slider),'method'=>'PATH'))}}
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
-                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="{{ route('slide.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        @csrf
+                        @method('PUT')
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Slide</label>
+                                    <label for="file-input" class="form-control-label">Slide</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="slider" name="slider" class="form-control-file" value="{{$slide->slider}}">
+                                    <input type="file" id="slider" name="slider" class="form-control-file">
                                     <small class="form-text text-muted">Tamaño: 8000x3821</small>
                                 </div>
                             </div>
@@ -54,7 +56,7 @@
                                     <label for="text-input" class=" form-control-label">Contenido</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <textarea id="descripcion" rows="10" name="descripcion" placeholder="Descripción" class="form-control ckeditor" required value="{!!$slide->descripcion!!}"></textarea>
+                                    <textarea id="descripcion" rows="10" name="descripcion" placeholder="Descripción" class="form-control ckeditor" required >{!!$slide->descripcion!!}</textarea>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -68,7 +70,7 @@
                         </div>
                         <div class="modal-footer card-footer form-group">
                             <button type="submit" class="btn btn-primary btn-sm">
-                                Guardar
+                                Actualizar
                             </button>
                         </div>
                     </form>

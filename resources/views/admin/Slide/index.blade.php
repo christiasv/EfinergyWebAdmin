@@ -5,7 +5,7 @@
 
     @include('admin.slide.search')
 
-    <a href="" data-target="#modal-create-slide" data-toggle="modal"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+    <a href="" data-target="#modal-create-slide" data-toggle="modal"><button class="au-btn au-btn-icon au-btn--green au-btn--small btn btn-success">
             Agregar Slider</button></a>
     </button>
 
@@ -21,6 +21,7 @@
                             <div class="col-md-12">{{$slide->subtitulo}}</div>
                         </div>
                         <p class="card-text">{!!$slide->descripcion!!}</p><br>
+                        <p><a href="{!!$slide->redireccion!!}" target="_blank">Ver más</a></p>
                         <a href="" data-target="#modal-update-{{$slide->cod_slider}}" data-toggle="modal"><buton class="btn btn-primary">Editar</buton></a>
                         <a href="" data-target="#modal-delete-{{$slide->cod_slider}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a><!-- Error con el modal, sale debajo -->
                     </div>

@@ -26,10 +26,10 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="file-input" accept="image/png, .jpeg, .jpg" class="form-control-label">Slide</label>
+                                    <label for="file-input" class="form-control-label">Slide</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="slider" name="slider" class="form-control-file">
+                                    <input type="file" id="slider" name="slider" class="form-control-file" accept="image/png, .jpeg, .jpg">
                                     <small class="form-text text-muted">Tamaño: 8000x3821 maximo</small>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     <label for="text-input" class=" form-control-label">Enlace</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="url" id="link" name="link" placeholder="Enlace de redirección" class="form-control">
+                                    <input type="url" id="redireccion" name="redireccion" placeholder="Enlace de redirección" class="form-control">
                                 </div>
                             </div>
                         </div>
