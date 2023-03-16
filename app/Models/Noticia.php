@@ -11,10 +11,9 @@ class Noticia extends Model
 
     protected $primaryKey='cod_noticias';
 
-    public $timestamps=false;
+    public $timestamps=true;
 
     protected $fillable =[
-        'fecha',
         'descripcion',
         'link',
         'estado'

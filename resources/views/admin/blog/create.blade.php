@@ -49,20 +49,12 @@
                                     <input type="text" id="titular" name="titular" placeholder="Tituto del blog" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="row form-group">
+                            <div class="row form-group"  style="display: none;">
                                 <div class="col col-md-3">
                                     <label for="text-input" class=" form-control-label">Usuario</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="cod_user" name="cod_user" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Fecha</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="datetime-local" id="fecha" name="fecha" class="form-control" required>
+                                    <input type="text" id="id" name="id" class="form-control" value="{{Auth::user()->id}}" required>
                                 </div>
                             </div>
                             <div class="row form-group">

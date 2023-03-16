@@ -20,7 +20,7 @@ class UsersController extends Controller
             $query=trim($request->get('searchText'));
             $user=DB::table('users')->where('name','LIKE','%'.$query.'%')
                 ->orderBy('id','desc')
-                ->paginate(7);
+                ->paginate(10);
 
             return view('seguridad.usuario.index',["usuarios"=>$user,"searchText"=>$query]);
         }
@@ -32,6 +32,7 @@ class UsersController extends Controller
 
     public function store(UsersFormRequest $request){
         $user=new User;
+        $user->rol = $request->get('rol');
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));
@@ -49,6 +50,7 @@ class UsersController extends Controller
 
     public function update(UsersFormRequest $request, $id){
         $user=User::findOrFail($id);
+        $user->rol = $request->get('rol');
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));

@@ -19,7 +19,7 @@ class Slide extends Model
         'subtitulo',
         'descripcion',
         'redireccion',
-        'estado'
+        'estado',
     ];
 
     protected $guarded =[

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class Blog extends Model
 {
@@ -11,19 +13,18 @@ class Blog extends Model
 
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class, 'cod_user');
+        return $this->belongsTo(User::class, 'id');
     }
 
     protected $primaryKey='cod_blog';
 
-    public $timestamps=false;
+    public $timestamps=true;
 
     protected $fillable =[
         'img_portada',
         'img_blog',
         'titular',
-        'cod_user',
-        'fecha',
+        'id',
         'descripcion',
         'estado'
     ];

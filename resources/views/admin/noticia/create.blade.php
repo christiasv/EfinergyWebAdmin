@@ -26,14 +26,6 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Fecha</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="date" id="fecha" name="fecha" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3">
                                     <label for="text-input" class=" form-control-label">Contenido</label>
                                 </div>
                                 <div class="col-12 col-md-9">

@@ -3,13 +3,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Eliminar Slide</h4>
+                <h4 class="modal-title">Eliminar Usuario</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">x</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>¿Desea eliminar el slide?</p>
+                <p>¿Desea eliminar a {{$usuario->name}}?</p>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Aceptar</button>

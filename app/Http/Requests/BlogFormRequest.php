@@ -27,8 +27,7 @@ class BlogFormRequest extends FormRequest
             'img_portada' => 'required',
             'img_blog' => 'required',
             'titular' => 'required',
-            'cod_user' => 'required',
-            'fecha' => 'required',
+            'id' => 'required',
             'descripcion' => 'required',
         ];
     }

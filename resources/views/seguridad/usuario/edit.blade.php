@@ -3,7 +3,7 @@
         <div class="modal-content">
             <!-- modal blog -->
             <div class="modal-header">
-                <h3 class="modal-title" id="mediumModalLabel">Editar Noticia</h3>
+                <h3 class="modal-title" id="mediumModalLabel">Editar usuario: {{$usuario->name}}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,12 +17,32 @@
                     </div>
                 @endif
             </div>
-            {!!Form::model($usuario,['method'=>'PATH','route'=>['seguridad.usuario.update',$usuario->id]])!!}
+            <!--{!!Form::model($usuario,['method'=>'PATH','route'=>['usuario.update',$usuario->id]])!!}-->
+            {{Form::Open(array('action'=>array('\App\Http\Controllers\NoticiaController@update',$usuario->id),'method'=>'PATH'))}}
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('usuario.store') }}">
                         @csrf
+                        @method('PUT')
+                        <div class="row mb-3">
+                            <label for="rol" class="col-md-4 col-form-label text-md-end">{{ __('Roles') }}</label>
+
+                            <div class="col-md-6">
+                                <!--<input id="name" type="text" class="form-control @error('rol') is-invalid @enderror" name="name" value="{{ old('rol') }}" required autocomplete="rol" autofocus>-->
+                                <select name="rol" id="rol" type="text" class="form-control @error('rol') is-invalid @enderror" required>
+                                    <option value="{{$usuario->rol}}" disabled selected>{{$usuario->rol}}</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Asistente">Asistente</option>
+                                    <option value="Visualizador">Visualizador</option>
+                                </select>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo') }}</label>

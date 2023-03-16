@@ -17,12 +17,14 @@
                     </div>
                 @endif
             </div>
-            <!--{!!Form::model($blog,['method'=>'PATCH','route'=>['blog.update',$blog->cod_blog]])!!}-->
-            {{Form::Open(array('action'=>array('\App\Http\Controllers\BlogController@update',$blog->cod_blog),'method'=>'GET'))}}
+            {!!Form::model($blog,['method'=>'PATCH','route'=>['blog.update',$blog->cod_blog]])!!}
+            <!--{{Form::Open(array('action'=>array('\App\Http\Controllers\BlogController@update',$blog->cod_blog),'method'=>'GET'))}}-->
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
-                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="{{ route('blog.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        @csrf
+                        @method('PUT')
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
@@ -55,15 +57,7 @@
                                     <label for="text-input" class=" form-control-label">Usuario</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="cod_user" name="cod_user" class="form-control" required value="{{$blog->nombre}}">
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Fecha</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="datetime-local" id="fecha" name="fecha" class="form-control" required value="{{$blog->fecha}}">
+                                    <input type="text" id="id" name="id" class="form-control" required value="{{$blog->nombre}}">
                                 </div>
                             </div>
                             <div class="row form-group">

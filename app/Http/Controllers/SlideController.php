@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Slide;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SlideFormRequest;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class SlideController extends Controller
 {
@@ -61,8 +62,14 @@ class SlideController extends Controller
         if ($request->hasFile('slider')) {
             $file=$request->file('slider');
             $file->move(public_path().'/img/slide/',$file->getClientOriginalName());
-            $slide->imagen=$file->getClientOriginalName();
+            $slide->slider=$file->getClientOriginalName();
         }
+        /*if ($request->hasFile('slider')) {
+            $file=$request->file('slider');
+            Storage::delete('/img/slide/'.$slide->slider);
+            $file->move(public_path().'/img/slide/',$file->getClientOriginalName());
+            $slide->slider=$file->getClientOriginalName();
+        }*/
         $slide->titulo=$request->get('titulo');
         $slide->subtitulo=$request->get('subtitulo');
         $slide->descripcion=$request->get('descripcion');

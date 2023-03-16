@@ -18,12 +18,30 @@
                 @endif
             </div>
             {!!Form::open(array('url'=>'seguridad/usuario','method'=>'POST','autocomplete'=>'off'))!!}
-            <!--{{Form::Open(array('action'=>array('\App\Http\Controllers\UsersController@store'),'method'=>'POST'))}}-->
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+
+                        <div class="row mb-3">
+                            <label for="rol" class="col-md-4 col-form-label text-md-end">{{ __('Roles') }}</label>
+
+                            <div class="col-md-6">
+                                <!--<input id="name" type="text" class="form-control @error('rol') is-invalid @enderror" name="name" value="{{ old('rol') }}" required autocomplete="rol" autofocus>-->
+                                <select name="rol" id="rol" type="text" class="form-control @error('rol') is-invalid @enderror" required>
+                                    <option value="0" disabled selected>{{ __('Seleccionar rol') }}</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Asistente">Asistente</option>
+                                    <option value="Visualizador">Visualizador</option>
+                                </select>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo') }}</label>

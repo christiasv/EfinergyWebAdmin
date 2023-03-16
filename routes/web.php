@@ -33,5 +33,3 @@ Route::resource('/admin/contacto', \App\Http\Controllers\ContactoController::cla
 Route::resource('/seguridad/usuario', \App\Http\Controllers\UsersController::class);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

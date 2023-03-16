@@ -20,8 +20,8 @@ class BlogController extends Controller
         if ($request) {
             $query = trim($request->get('searchText'));
             $blogs = DB::table('blog as b')
-                ->join('usuario as u', 'b.cod_user', "u.cod_user")
-                ->select('b.cod_blog', 'b.img_portada', 'b.img_blog', 'b.titular', 'u.nom_user as nombre', 'b.fecha', 'b.descripcion')
+                ->join('users as u', 'b.id', "u.id")
+                ->select('b.cod_blog', 'b.img_portada', 'b.img_blog', 'b.titular', 'u.name as nombre', 'b.updated_at', 'b.descripcion')
                 ->where('b.titular', 'LIKE', '%' . $query . '%')
                 ->orderBy('cod_blog', 'desc')
                 ->paginate(9);
@@ -31,7 +31,7 @@ class BlogController extends Controller
     }
 
     public function create(){
-            $usuarios=DB::table('usuario')->where('estado','=','1')->get();
+            $usuarios=DB::table('users')->where('estado','=','1')->get();
             return view('admin.blog.create',["usuarios"=>$usuarios]);
     }
 
@@ -48,8 +48,7 @@ class BlogController extends Controller
             $blog->img_blog=$file2->getClientOriginalName();
         }
         $blog->titular=$request->get('titular');
-        $blog->cod_user=$request->get('cod_user');
-        $blog->fecha=$request->get('fecha');
+        $blog->id=$request->get('id');
         $blog->descripcion=$request->get('descripcion');
         $blog->estado='1';
         $blog->save();
@@ -77,8 +76,7 @@ class BlogController extends Controller
             $blog->img_blog=$file2->getClientOriginalName();
         }
         $blog->titular=$request->get('titular');
-        $blog->cod_user=$request->get('cod_user');
-        $blog->fecha=$request->get('fecha');
+        $blog->id=$request->get('id');
         $blog->descripcion=$request->get('descripcion');
         $blog->update();
         return Redirect::to('admin/blog');

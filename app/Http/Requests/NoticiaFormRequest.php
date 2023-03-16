@@ -24,7 +24,6 @@ class NoticiaFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'fecha' => 'required',
             'descripcion' => 'required',
             'link' => 'max:512',
         ];

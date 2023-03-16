@@ -12,6 +12,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th scope="col">Rol</th>
                     <th scope="col">Nombre Completo</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Fecha de Registro</th>
@@ -21,6 +22,7 @@
                 <tbody>
                 @foreach($usuarios as $usuario)
                 <tr>
+                    <td>{{$usuario->rol}}</td>
                     <td>{{$usuario->name}}</td>
                     <td>{!!$usuario->email!!}</td>
                     <td>{{$usuario->created_at}}</td>
@@ -36,6 +38,6 @@
             </table>
     </div>
     @include('seguridad.usuario.create')
-    {{$usuarios->render()}}
+    {{$usuarios->links()}}
 
 @stop
