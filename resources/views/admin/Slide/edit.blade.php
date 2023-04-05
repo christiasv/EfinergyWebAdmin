@@ -17,21 +17,19 @@
                     </div>
                 @endif
             </div>
-            <!--{!!Form::model($slide,['method'=>'PATCH','route'=>['slide.update',$slide->cod_slider]])!!}-->
-            {{Form::Open(array('action'=>array('\App\Http\Controllers\SlideController@update',$slide->cod_slider),'method'=>'PATH'))}}
+            {!!Form::open(array('url'=>'/admin/slide/' ,'method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
-                    <form action="{{ route('slide.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                         @csrf
-                        @method('PUT')
                         <div class="tab-content" id="nav-tabContent">
                             <div class="row form-group">
                                 <div class="col col-md-3">
                                     <label for="file-input" class="form-control-label">Slide</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="file" id="slider" name="slider" class="form-control-file">
+                                    <input type="file" id="slider" name="slider" class="form-control-file" accept="image/png, .jpeg, .jpg">
                                     <small class="form-text text-muted">Tamaño: 8000x3821</small>
                                 </div>
                             </div>

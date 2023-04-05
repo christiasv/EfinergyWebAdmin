@@ -22,7 +22,7 @@
             {{Form::token()}}
             <div class="modal-body">
                 <div class="card-body card-block">
-                    <form action="{{ route('usuario.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="{{ route('noticia.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                         @csrf
                         @method('PUT')
                         <div class="tab-content" id="nav-tabContent">

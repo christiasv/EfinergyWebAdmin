@@ -57,19 +57,13 @@ class SlideController extends Controller
         return view("admin.slide.edit",["slide"=>Slide::findOrFail($cod)]);
     }
 
-    public function update(SlideFormRequest $request, $cod){
+    public function update(Request $request, $cod){
         $slide=Slide::findOrFail($cod);
         if ($request->hasFile('slider')) {
             $file=$request->file('slider');
             $file->move(public_path().'/img/slide/',$file->getClientOriginalName());
             $slide->slider=$file->getClientOriginalName();
         }
-        /*if ($request->hasFile('slider')) {
-            $file=$request->file('slider');
-            Storage::delete('/img/slide/'.$slide->slider);
-            $file->move(public_path().'/img/slide/',$file->getClientOriginalName());
-            $slide->slider=$file->getClientOriginalName();
-        }*/
         $slide->titulo=$request->get('titulo');
         $slide->subtitulo=$request->get('subtitulo');
         $slide->descripcion=$request->get('descripcion');
